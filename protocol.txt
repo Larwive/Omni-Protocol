@@ -1,0 +1,24 @@
+Protocol description (v1)
+
+Commands:
+0x0: ping
+0x1: pong (response of ping)
+0x2 -> Ox8: file transfer (see below)
+
+
+Message length:
+0xVVVV
+The VVVV immediately follows the command hexadecimal value.
+
+File transfer:
+0x2: (PtT) Announcing files to share and listening port to handle file sharing.
+0x3: (PtT) Buffermap update for a certain file.
+0x4: (PtP) Request for pieces for a certain file.
+0x5: (PtP) Data (response to 0x4).
+0x6: (PtT) Fetch for available files.
+0x7: (TtP) Files data (response to 0x6).
+0x8: (TtT) Update known data to other trackers.
+0x9: (TtT) Force getting updated by other trackers.
+
+
+
